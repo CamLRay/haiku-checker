@@ -13,7 +13,17 @@
 
 ## Description
 
-_{This is a detailed description of your application. Give as much detail as needed to explain what the application does as well as any other information you want users or other developers to have.}_
+_Rules for a Haiku:_
+
+- _5, 7, 5 syllable pattern_
+
+_Rules for Syllables_
+
+- _Closed: A vowel followed by a consonant (VC)_
+- _Magic E: If the last letter is E (VCe)_
+- _Two vowels that make one sound (VV) (ea, oa, ee...)_
+- _R: the vowel(s) are followed by the single letter R_
+- _Consonant -le_
 
 ## Setup/Installation Requirements
 
