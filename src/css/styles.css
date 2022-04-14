@@ -1,0 +1,26 @@
+body {
+  background-image: url(../assets/images/background.jpg);
+  background-size: auto;
+  background-attachment: fixed;
+}
+p {
+  display: inline-block;
+  margin: 1em;
+}
+
+body {
+  text-align: center;
+}
+
+input {
+  margin-bottom: 1em;
+}
+
+.jumbotron {
+  padding-bottom: 1em;
+  background-color: #e9ecefcb;
+}
+
+input {
+  width: 20em;
+}

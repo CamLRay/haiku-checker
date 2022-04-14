@@ -1,15 +1,18 @@
-# _{Application Name}_
+# _Haiku Tracker & Generator_
 
-#### By _**{List of contributors}**_
+#### By _**Gabe Nielsen, Cameron Ray, and Jeremy Martin**_
 
-#### _{Brief description of application}_
+#### _This application will take three different inputs, and tell the user if they makde a haiku. It also will generate a random haiku._
 
 ## Technologies Used
 
-- _List all_
-- _the major technologies_
-- _you used in your project_
-- _here_
+- _HTML_
+- _CSS_
+- _Bootstrap_
+- _JavaScript_
+- _jQuery_
+- _Jest_
+- _npm_
 
 ## Description
 
@@ -17,31 +20,25 @@ _Rules for a Haiku:_
 
 - _5, 7, 5 syllable pattern_
 
-_Rules for Syllables_
+_Basic Rules for Syllables (Many exceptions apply)_
 
-- _Closed: A vowel followed by a consonant (VC)_
-- _Magic E: If the last letter is E (VCe)_
-- _Two vowels that make one sound (VV) (ea, oa, ee...)_
-- _R: the vowel(s) are followed by the single letter R_
-- _Consonant -le_
+- _Vowels: As a base, every vowel is it's own syllable_
+- _Vowel Pairs: There is a long list of vowel pairs that will only make one syllable_
+- _Magic E: If the last letter is E in a VCe pattern_
 
 ## Setup/Installation Requirements
 
-- _This is a great place_
-- _to list setup instructions_
-- _in a simple_
-- _easy-to-understand_
-- _format_
-
-_{Leave nothing to chance! You want it to be easy for potential users, employers and collaborators to run your app. Do I need to run a server? How should I set up my databases? Is there other code this application depends on? We recommend deleting the project from your desktop, re-cloning the project from GitHub, and writing down all the steps necessary to get the project working again.}_
+- _Clone this repository_
+- _Install npm_
+- _Run npm start in root directory_
 
 ## Known Bugs
 
-- _Any known issues_
-- _should go here_
+- _Diphthongs are hit or miss on if the program will register syllables correctly_
+- _Some prefixes and suffixes will register incorrectly_
+- _Some compound words will register incorrectly_
+- _Eat counts as 0_
 
 ## License
 
-_{Let people know what to do if they run into any issues or have questions, ideas or concerns. Encourage them to contact you or make a contribution to the code.}_
-
-Copyright (c) _date_ _author name(s)_
+Copyright (c) _2022_ _Gabe Nielsen, Cameron Ray, Jeremy Martin_
