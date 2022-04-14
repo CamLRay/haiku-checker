@@ -1,8 +1,8 @@
 export class Haiku {
   constructor(line1, line2, line3) {
-    this.line1 = line1.split(" ");
-    this.line2 = line2.split(" ");
-    this.line3 = line3.split(" ");
+    this.line1 = line1.toLowerCase().split(" ");
+    this.line2 = line2.toLowerCase().split(" ");
+    this.line3 = line3.toLowerCase().split(" ");
     this.vowel = ['a','e','i','o','u','y'];
   }
 
@@ -10,7 +10,7 @@ export class Haiku {
     let syllableCount = 0;
       for (let i = 0; i < this[line].length; i++) {
         let vowelCount = 0;
-        this[line][i].split("").forEach((letter, index) => {
+        this[line][i].split("").forEach((letter) => {
           if(this.vowel.includes(letter)) {
             vowelCount++
           }
@@ -22,11 +22,22 @@ export class Haiku {
     return syllableCount;
   }
 
+  vowelCount(line) {
+    let vowelCount = 0;
+    for (let i = 0; i < this[line].length; i++) {
+    this[line][i].split("").forEach((letter) => {
+      if(this.vowel.includes(letter)) {
+        vowelCount++;
+      }
+    });
+    }
+    return vowelCount;
+  }
+
   vowelTeamSyllable(line) {
     let teamCount = 0;
-    const vowelTeam = ['oa','oe','ie','ue','ea','ee','ai','ay'];
     for (let i = 0; i < this[line].length; i++) {
-          teamCount += (this[line][i].match(/oa|oe|ie|ue|ea|ee|ai|ay/g)|| []).length;
+          teamCount += (this[line][i].match(/oa|oe|ie|ue|ea|ee|ai|ay|ey/g)|| []).length;
     }
     return teamCount;
   }
@@ -38,12 +49,20 @@ export class Haiku {
         if (this[line][i][j] === "e" && 
         (!this.vowel.includes(this[line][i].slice(j-1,j))) && 
         this.vowel.includes(this[line][i].slice(j-2,j-1)) &&
-        (!this[line][i].slice(j-3,j-1).match(/oa|oe|ie|ue|ea|ee|ai|ay/g))) {
+        (!this[line][i].slice(j-3,j-1).match(/oa|oe|ie|ue|ea|ee|ai|ay|ey/g))) {
           magicCount += 1;
-        }
+        } 
       }
     }
     return magicCount;
+  }
+ 
+  syllableTotals() {
+    let syllableArray = [];
+    for(let i = 1; i <=3; i++) {
+      syllableArray.push(this.vowelCount("line" + i) - this.vowelTeamSyllable("line" + i) - this.magicESyllable("line" + i));
+    }
+    return syllableArray;
   }
 }
 
@@ -114,4 +133,31 @@ word.match(REGEX for vowels).length = syllableCount
             count += 1
           }
         });
+
+
+        function syllables(word) {
+  const vowels = ["a", "e", "i", "o", "u"];
+  let syllableCount = 0;
+  if (vowels.includes(word[0])) {
+    syllableCount++
+  }
+  for(let i = 1; i <= word.length; i++) {
+    if (vowels.includes(word[i]) && (!vowels.includes(word[i -1]))) {
+      syllableCount++
+    } 
+  }
+  if (word.endsWith("e")) {
+    syllableCount--
+  }
+  if (word.endsWith("le") && word.length > 2 && (!vowels.includes(word[word.length -3]))) {
+    syllableCount++
+  }
+  if (syllableCount === 0) {
+    syllableCount++
+  }
+  return syllableCount;
+}
+
 */
+
+
